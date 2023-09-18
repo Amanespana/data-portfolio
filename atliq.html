@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Amandeep's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <a href="#" class="image avatar"
+          ><img src="images/5.png" alt="Profile Pic"
+        /></a>
+        <h1><strong>Amandeep Singh</strong><br /></h1>
+        <p>
+          Data Analyst<br />
+          <br />
+          👋 Hey! Welcome to my portfolio. I'm a Data Analyst. I have a Master's
+          degree in Mechanical Engineering from Concordia University and an IBM
+          Professional Data Analyst Certificate, where I honed my analytical and
+          problem-solving skills.
+          <br />
+          <br />
+          <b>Top Skills: </b> Python | SQL | Excel | Power BI
+        </p>
+      </div>
+    </header>
+
+
+    <!-- Main (This is where I'll add my project description)-->
+    <div id="main">
+        <a href="index.html" class="button">←</a>
+
+      <!-- One -->
+      <section id="one">
+        <header class="major">
+          <h1>
+            From Numbers to Narratives: A Deep Dive into AtliQ Hardware's Sales
+          </h1>
+        </header>
+        <span class="image main"
+        ><img src="images/atliq_banner_home.jpg" alt=""
+      /></span>
+        <p>Atliq Hardware is a renowned name in the tech industry, specializing in top-tier computer hardware components crafted for gaming and high-performance needs. Famed for their unwavering reliability, blazing speed, and exceptional durability, Atliq hardware is the preferred choice for discerning gamers and tech enthusiasts worldwide.</p>
+        <h3>Why this project?</h3>
+        <p>In the quest to expand my data analytics skills, I embarked on this exhilarating adventure, driven by the desire to not only apply what I've learned but also to dive headfirst into the realm of sales analytics. Armed with questions and armed with data, I delved deep into the numbers, seeking insights that would not only benefit the hardware store but also sharpen my analytical prowess.</p>
+        <h3>Area of Focus</h3>
+            <p>
+              In this project, I will meticulously dissect and analyze a five-year span of sales data, spanning from 2018 to 2022. My investigation will be guided by four key pillars:
+              <ul>
+                <li><b><u>Annual Growth Analysis</u>📊: </b>  I'll calculate and interpret the annual percent change in sales over this period, offering a comprehensive view of the hardware store's performance and evolution.</li>
+                <li><b><u>Monthly Sales Trends</u>📈: </b>Delving deeper, I'll explore the nuances of sales trends on a monthly basis within each year. This will unveil the ebb and flow of demand throughout the year.</li>
+                <li><b><u>Market Dominance</u>🌎: </b> I'll identify the top 10 markets that consistently contribute to revenue in any given year. Understanding market dynamics is crucial for strategic decision-making.</li>
+                <li><b><u>Revenue Breakdown</u>💰: </b>Lastly, I will conduct an in-depth analysis of the percentage breakdown of revenue, dissecting it by different platforms, product categories, and sales channels. This will shed light on the store's diverse revenue streams.</li>
+              </ul>
+            </p>
+            <h3>About Data and it's source</h3>
+              <p>The data for this project was sourced from Kaggle <a href="https://www.kaggle.com/code/irnehred/sales-domain-data-analysis">(link)</a>, a renowned platform for datasets and data science resources. Data contains six distinct tables which inlcudes important attributes like:</p>
+                 <ul>
+                    <li>Quantity Sold</li>
+                    <li>Gross Price</li>
+                    <li>Manufacturing Cost</li>
+                    <li>Discount Percentage</li>
+                    <li>Product Category</li>
+                    <li>Product Variant</li>
+                    <li>Distribution Channel</li>
+                    <li>Market</li>
+                    <li>Region</li>
+                  </ul>
+            <h3>Exploration</h3>
+            <p>Upon retrieval, I loaded the data into MySQL. This SQL-based approach allowed for structured data manipulation and querying, facilitating the extraction of valuable insights. Upon merging these tables, the resulting dataset comprises a total of 67,250 rows and 19 columns, serving as the foundation for our in-depth analysis. Finally, visualizations are produced using Power BI</p>
+           <h3>Analysis</h3>
+            <h4>Annual Growth Analysis: A dive into Sales Evolution</h4>
+            <p>To calculate annual percent change in sales, I first meticulously computed daily sales figures by multiplying quantities sold with the discounted gross price. This detailed approach allowed me to capture the nuances of daily transactions. Then with a year-by-year aggregation, the annual sales growth percentages came into focus:</p>
+            <ul>
+              <li>In 2018, the store recorded total sales of 2.2 million, laying the foundation for what was to come.</li>
+              <li>The year 2019 saw a remarkable surge, with total sales amounting to 5.1 million, marking an astonishing 129% growth.</li>
+              <li>Amidst the challenges of 2020, the store's resilience shone through, with sales reaching 10.1 million, reflecting a substantial 97% increase in revenue.</li>
+              <li>In 2021, the upward trajectory continued, as sales skyrocketed to 18.9 million, a remarkable 86% leap from the previous year.</li>
+              <li>Finally, in 2022, the store achieved a new milestone, raking in nearly 30 million in sales, representing a solid 59% growth compared to the preceding year.</li>
+            </ul>
+            <p>Here is a visual representation of the above in a simple column chart.</p>
+            <span class="image main"
+                ><img src="images/revenue_by_year_atliq.png" alt=""
+              /></span>
+              <br>
+              <br>
+            <h4>Moving on to Monthly Sales Trends:</h4>
+            <p>To decode the intricate dance of monthly sales trends, I leveraged the revenue column derived from our meticulous calculations. My approach involved aggregating this revenue data on a monthly basis, allowing me to unearth fascinating patterns that repeated year after year.
+              <br><br>
+              What emerged was a recurring narrative: The beginning of each year presented a portrait of stability, with sales staying consistently strong. However, it was the latter part of the year, from September onward, that witnessed an electrifying transformation. Sales embarked on an exponential journey, surging with unwavering momentum right through to the year's end.
+              <br><br>
+              This captivating trend unfolded in each annual analysis, painting a clear picture of seasonal shifts and opportunities. By pinpointing this recurring pattern, we gain invaluable insight into the store's sales dynamics, empowering us to harness this momentum strategically.
+            </p>
+            <p>Here is a visual representation of aggregated monthly sales trend for 5 years in a simple line chart. You can see the monthly sales trend each year in the final dashboard at the end of this report.</p>
+            <span class="image main"
+                ><img src="images/5yr_monthly_sales_atliq.png" alt=""
+              /></span>
+              <br>
+              <br>
+              <h4>Let's look at Market Dominanc: Deciphering the Top Revenue Contributors</h4>
+              <p>In the quest to comprehend the heartbeat of sales dynamics, I set out to identify the steadfast market leaders that consistently paved the way for revenue growth. Armed with SQL's analytical prowess, I crafted a groupby query wherein I leveraged the 'Market' column in conjunction with revenue data to unveil the top 10 markets that, year after year, proved to be the linchpin of store's success. The results were loaded into Power BI to visually reveal a powerful roster of contributors:</p>
+              <span class="image main"
+                ><img src="images/top10markets_atliq.png" alt=""
+              /></span>
+              <br>
+              <br>
+              <h4>Finally Demystifying Revenue Streams: </h4>
+              <p>In the pursuit of unraveling the intricate web of revenue sources, I turned to the power of data visualization in Power BI. Donut charts took center stage, offering a visual feast for the eyes as I delved into the percentage breakdown of revenue by platform, channel and product category. The revelations were illuminating:</p>
+              <ul>
+                <li>A staggering 71% of the revenue flows in from Brick & Mortar stores, highlighting their pivotal role in store's earnings, while the remainder is attributed to online sales.</li>
+                <li>Drilling deeper into product categories, a striking 86% of the sales emanate from Internal HDD, with the remainder being contributed by Graphic Cards.</li>
+                <li>he revenue breakdown by channel paints a compelling picture, with retailer sales commanding a lion's share at 71% of the total revenue. Direct channels follow at 17%, and distributors play their part, contributing 12%.</li>
+              </ul>
+              <p>Here is a visual representation using donut charts.</p>
+              <span class="image main"
+                ><img src="images/revenue_breakdown_atliq.png" alt=""
+              /></span>
+              <br>
+              <br>
+              <p>This comprehensive analysis of the diverse revenue streams equips us with insights to refine the strategies, emphasizing the pivotal role of certain product categories and sales channels while paving the way for data-driven decision-making.</p>
+              <h3>Summary of Key Insights and Strategic Implications:</h3>
+              <p>Throughout this immersive project, we journeyed through the labyrinth of sales data, uncovering invaluable insights that can guide us toward data-driven decisions and propel AtliQ Hardware to new heights of growth:</p>
+              <ol>
+                <li><b>Annual Growth Trends: </b>Year after year, the store experienced substantial growth in sales, with a remarkable 129% spike in 2019. Understanding these annual fluctuations allows us to anticipate trends, allocate resources effectively, and set realistic targets.</li>
+                <li><b>Monthly Sales Patterns: </b>A consistent pattern emerged, where the early months showcased steady sales, and an exponential surge began in September, leading to year-end highs. Recognizing this seasonality enables us to optimize inventory, marketing, and staffing.</li>
+                <li><b>Market Dominance: </b>Ten markets consistently emerged as our revenue champions, including India, USA, and South Korea. Identifying these key markets empowers us to tailor marketing strategies and allocation of resources to drive growth.</li>
+                <li><b>Revenue Breakdown: </b>With 71% of revenue from Brick & Mortar stores, the importance of physical retail is evident. Further, product categories like Internal HDD and Graphic Cards contribute significantly. Leveraging this insight, we can focus on strengthening these areas.</li>
+                <li><b>Sales Channels: </b>Retailer sales account for a substantial 71%, followed by Direct and Distributor channels. Diversifying sales channels or optimizing them based on this breakdown can lead to increased revenue streams.</li>
+              </ol>
+              <p>By embracing these insights, we embark on a data-driven journey that informs strategic decisions, enhances resource allocation, and tailors marketing efforts. Our newfound understanding of growth patterns, market dynamics, and revenue streams equips us to seize opportunities, mitigate challenges, and propel our AtliQ Hardware toward even greater success.</p>
+              <h3>Experience the Insights: Explore the Interactive Dashboard</h3>
+              <p>Delve deeper into the story of our sales data and explore the dynamic visuals that bring it to life. Click below to interact with our interactive dashboard, where you can navigate through the trends, markets, and revenue breakdowns that shape our strategic decisions. Witness the power of data-driven insights in action, and envision the path to our future growth.</p>
+              <div class="iframe-container">
+                <iframe title="dashbaord1" width="1200" height="700" src="https://app.powerbi.com/view?r=eyJrIjoiMjQ2YmRkOGItZGUxZC00MzVhLWI1MmMtZjNlY2NhZDAzMzUwIiwidCI6IjY4YWFmOTBkLTM5OGEtNDk3ZC05YTBiLTFkZjk1ZmEyNDcyNCJ9" frameborder="0" allowFullScreen="true"></iframe>
+              </div>
+      </section>
+    </div>
+  </body>
+</html>
+
+<!-- Main -->
+<div id="main">
+  <!-- Two -->
+  <section id="two"></section>
+
+  <!-- Three -->
+
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/amandeep-s"
+            class="icon brands fa-linkedin-in"
+            ><span class="label">LinkedIn</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Amanespana"
+            class="icon brands fa-github"
+            ><span class="label">Github</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="mailto:amandeep1552@gmail.com"
+            class="icon solid fa-envelope"
+            ><span class="label">Email</span></a
+          >
+        </li>
+      </ul>
+      <ul class="copyright">
+        <li>&copy; Amandeep Singh</li>
+        <li>Design by: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
