@@ -60,14 +60,14 @@
         <p>The motivation behind this project stems from the recognition that Twitter users often share their thoughts, feelings, and predictions about stocks and financial markets in real-time. Harnessing the sentiment embedded within these tweets could offer valuable predictive insights and assist in making informed investment decisions.
 
         </p>
-        <h3>Area of Focus</h3>
+        <h3>Area of Focus 🎯</h3>
         <p>In this project, through sentiment analysis, I aim to answer crucial question- <b>Does the collective sentiment on Twitter impact stock prices?</b>
           
            <br>
            <br>
            By embarking on this project, I aspire to bridge the gap between social media (twitter) sentiment and financial markets, ultimately helping investors navigate the complexities of today's interconnected world.
           </p>
-          <h3>About Data and it's source</h3>
+          <h3>About Data and it's source 📁</h3>
           <p><b>Data Source: </b>The data for this project was sourced from Kaggle <a href="https://www.kaggle.com/datasets/omermetinn/tweets-about-the-top-companies-from-2015-to-2020">(link)</a>, a renowned platform for datasets and data science resources. The dataset used consists of three key tables: "Company," "Company_Tweet," and "Tweet."
             <ul>
               <li><b>Company Table: </b> The "Company" table includes two significant columns: "Company Name" and "Ticker Symbol." </li>
@@ -88,16 +88,16 @@
           <p><b>Data Coverage: </b>The dataset consisted of a substantial collection of tweets, totaling 3,717,964 entries related to six companies, one of which is Tesla. These tweets spanned over a five-year period, from 2015 to 2020, providing a comprehensive and rich source of data for the analysis.</p>
           <p><b>Data Filtering: </b>For this project, I focused my analysis specifically on tweets related to Tesla during the year 2019. After applying the necessary filters, I obtained a subset of the dataset, which included 380115 tweets relevant to Tesla.</p>
           <p><b>Data Integrity: </b>It's important to note that data integrity was a key consideration in this project. The relationships between tables, particularly the use of "Tweet ID" and "Ticker Symbol" columns in the "Company_Tweet" table, were critical for linking tweets to specific companies accurately.</p>
-          <h3>Data Preparation</h3>
+          <h3>Data Preparation 🔧</h3>
           <p>To ensure the text data was in a suitable format for sentiment analysis, several preprocessing steps were undertaken using the Python libraries re (regex) and nltk (Natural Language Toolkit). These steps included:
             <ul>
-              <li><b>Text Cleaning: </b>Irrelevant characters, punctuation, URLs, and special symbols were removed from the tweets using 're' library. This step helped in eliminating noise from the text data, ensuring that only the relevant content was considered for sentiment analysis.</li>
-              <li><b>Tokenization: </b>The nltk library's word_tokenize was utilized to split the text into individual words or tokens. Tokenization is a fundamental step in natural language processing (NLP) that breaks down the text into its constituent elements, making it easier to analyze.</li>
-              <li><b>Stopword Removal: </b>Common words such as "a," "the," "is," etc., were removed from the text data. These words, known as stopwords, do not typically contribute significant sentiment information and were thus excluded from the analysis to focus on meaningful content.</li>
-              <li><b>Lemmatization: </b>To standardize the text and reduce words to their base or root form, WordNetLemmatizer from nltk was used. This process ensured that variations of words were simplified, making it easier to identify sentiment patterns consistently.</li>
+              <li><b>Text Cleaning 🧹: </b>Irrelevant characters, punctuation, URLs, and special symbols were removed from the tweets using 're' library. This step helped in eliminating noise from the text data, ensuring that only the relevant content was considered for sentiment analysis.</li>
+              <li><b>Tokenization ✂️: </b>The nltk library's word_tokenize was utilized to split the text into individual words or tokens. Tokenization is a fundamental step in natural language processing (NLP) that breaks down the text into its constituent elements, making it easier to analyze.</li>
+              <li><b>Stopword Removal 🚫: </b>Common words such as "a," "the," "is," etc., were removed from the text data. These words, known as stopwords, do not typically contribute significant sentiment information and were thus excluded from the analysis to focus on meaningful content.</li>
+              <li><b>Lemmatization 📚: </b>To standardize the text and reduce words to their base or root form, WordNetLemmatizer from nltk was used. This process ensured that variations of words were simplified, making it easier to identify sentiment patterns consistently.</li>
             </ul>
           </p>
-          <h3>Sentiment Analysis</h3>
+          <h3>Sentiment Analysis 📈</h3>
           <p> Sentiment analysis was conducted using the TextBlob library, a powerful tool for natural language processing tasks. TextBlob provides a simple and intuitive interface for sentiment analysis, making it well-suited for this project. Following steps were performed:
             <ul>
               <li><b>Polarity Score Calculation: </b>TextBlob assigns a polarity score to each tweet, indicating the sentiment's intensity. The polarity score ranges from -1 (strongly negative) to 1 (strongly positive), with 0 representing neutrality. This score measures the overall sentiment expressed in the tweet.</li>
