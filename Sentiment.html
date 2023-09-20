@@ -97,7 +97,25 @@
               <li><b>Lemmatization: </b>To standardize the text and reduce words to their base or root form, WordNetLemmatizer from nltk was used. This process ensured that variations of words were simplified, making it easier to identify sentiment patterns consistently.</li>
             </ul>
           </p>
-          <h3>Exploratory Data Analysis</h3>
+          <h3>Sentiment Analysis</h3>
+          <p> Sentiment analysis was conducted using the TextBlob library, a powerful tool for natural language processing tasks. TextBlob provides a simple and intuitive interface for sentiment analysis, making it well-suited for this project. Following steps were performed:
+            <ul>
+              <li><b>Polarity Score Calculation: </b>TextBlob assigns a polarity score to each tweet, indicating the sentiment's intensity. The polarity score ranges from -1 (strongly negative) to 1 (strongly positive), with 0 representing neutrality. This score measures the overall sentiment expressed in the tweet.</li>
+              <li><b>Labeling Sentiments: </b>Sentiment labels were assigned to tweets based on a specific polarity score range, providing a nuanced understanding of sentiment. The labeling criteria were as follows:
+                <ul>
+                  <li>Neutral: Tweets with a sentiment polarity score equal to 0 were categorized as "Neutral."</li>
+                  <li>Weak Positive: Tweets with a sentiment polarity score greater than 0 and up to 0.3 were labeled as "Weak Positive."</li>
+                  <li>Positive: Tweets with a sentiment polarity score greater than 0.3 and up to 0.6 were classified as "Positive."</li>
+                  <li>Strong Positive: Tweets with a sentiment polarity score greater than 0.6 and up to 1 were identified as "Strong Positive."</li>
+                  <li>Weak Negative: Tweets with a sentiment polarity score less than or equal to 0 and greater than -0.3 were designated as "Weak Negative."</li>
+                  <li>Negative: Tweets with a sentiment polarity score less than or equal to -0.3 and greater than -0.6 were marked as "Negative."</li>
+                  <li>Strong Negative: Tweets with a sentiment polarity score less than or equal to -0.6 and greater than -1 were categorized as "Strong Negative."</li>
+              </ul>
+              
+              </li>
+            </ul>
+            
+          </p>
 
         
       </section>
