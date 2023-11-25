@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Amandeep's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="left-section-container"></div>
+
+
+    <!-- Main (This is where I'll add my project description)-->
+    <div id="main">
+        <a href="index.html" class="button">←</a>
+
+      <!-- One -->
+      <section id="one">
+        <header class="major">
+          <h1>
+            Future Charged: Predicting Tesla's Stock Price using ARIMA,
+                Prophet and N-Beats
+          </h1>
+        </header>
+        <span class="image main"
+        ><img src="images/tesla_stock_price_banner1_resized1.png" alt=""
+      /></span>
+      <br>
+      <br>
+        <p style="text-align: justify;">Tesla, Inc., an American electric vehicle and clean energy company, has revolutionized the automotive and energy industries with its innovative technologies and visionary approach. Founded in 2003, Tesla has not only become a symbol of the electric vehicle movement but also a significant player in the global stock market. Its stock, often featured in major indexes like the NASDAQ, has attracted widespread attention from investors, analysts, and the public for its remarkable growth and occasional volatility. </p>
+        <h2>Why this project?</h2>
+        <p>Predicting stock prices is a complex and dynamic challenge, owing to the myriad factors that influence market movements. Factors such as market sentiment, industry trends, global economic conditions, and company-specific news can significantly impact stock prices. The challenge becomes even more intriguing with stocks like Tesla's, known for their high volatility and unpredictable market behavior. Accurate prediction of such stock prices is crucial as it aids investors in making informed decisions, helps financial analysts in market trend analysis, and is vital for portfolio management and risk assessment in the ever-evolving financial markets. Therefore, I took over this challenge to enhance my analytical skills and learn more about time series analysis.</p>
+        <h2>Area of Focus</h2>
+            <p>
+              The primary goal of this project is to develop a robust and reliable model that can accurately predict Tesla's stock price. Leveraging advanced time-series forecasting models such as <b>ARIMA</b> (AutoRegressive Integrated Moving Average), <b>Prophet</b>, and <b>N-BEATS</b>, this project aims to compare their predictive capabilties.  By evaluating which model works best, the project seeks to contribute valuable insights to the field of financial analysis and offer practical tools for investors and analysts in navigating the dynamic landscape of the stock market.
+              <a href="https://github.com/Amanespana/Leveragai/blob/main/TeslaStockPrediction/TeslaStockPrediction.ipynb">(Github Link)</a>
+            </p>
+          
+            <h2>About Data and it's source</h2>
+              <p>The data for this project was sourced from Yahoo Finance using the yfinance API, a popular tool among data scientists and financial analysts for retrieving historical market data. The focus was on a recent and relevant timeframe, specifically from October 1, 2022, to January 1, 2023. This period was chosen to analyze the latest market trends and behaviors influencing Tesla's stock. </p>
+            <h2>Exploratory Data Analysis</h2>
+            <p>Upon retrieval, a thorough examination of the dataset revealed no missing values. This is significant as it implies a high degree of data completeness and integrity for the period under analysis. The absence of missing values eliminated the need for data cleaning techniques like interpolation, forward filling, or backward filling. This ensures that the analysis is based on unaltered, real-world data.</p>
+            <p>The analysis uncovered that during the specified timeframe, the minimum stock price of Tesla was <b>USD 108.24</b>, while the maximum price reached <b>USD 257.5</b>. This significant fluctuation highlights the volatility in Tesla's stock during this period, which could be attributed to various market factors. Such volatility could be crucial for short-term traders and investors in making informed decisions.</p>
+            <span class="image main"
+                ><img src="images/tesla_plot1_r.png" alt=""
+              /></span>
+              <br>
+              <br>
+            <p>The average trading volume during this period was observed to be approximately <b>104 million</b> shares with maximum trading volume reaching <b>221 million</b> shares.  High trading volumes can indicate high investor interest and can also lead to increased volatility. This aspect of the data could be essential for understanding market sentiment and liquidity.</p>
+            <span class="image main"
+                ><img src="images/tesla_plot2_r.png" alt=""
+              /></span>
+              <br>
+              <br>
+            <h2>Time Series Analysis</h2>
+            <div>
+              <h3>Data Splitting Strategy for Tesla Stock Price Forecasting</h3>
+              <ul>
+                  <li>
+                      <strong>Training Set:</strong> The first two months of data, from October 1, 2022, to December 1, 2022, were designated as the training set. This dataset is used to train and build the forecasting models.
+                  </li>
+                  <li>
+                      <strong>Testing Set:</strong> The remaining data, from December 2, 2022, to January 1, 2023, is used as the testing set. This dataset helps in evaluating the performance and accuracy of the models in predicting future stock prices.
+                  </li>
+              </ul>
+              <span class="image main"
+                ><img src="images/tesla_plot4_r.png" alt=""
+              /></span>
+              <br>
+              <br>
+          </div>
+          <div class="dots-divider"></div>
+            <h3>Using ARIMA (AutoRegressive Integrated Moving Average)</h3>
+            <p>ARIMA is a classic statistical model used for forecasting time series data. It's particularly well-suited for data with a clear trend or seasonal patterns.
+              <a href="https://github.com/Amanespana/Leveragai/blob/main/TeslaStockPrediction/TeslaStockPrediction.ipynb">(Github Link)</a>
+            </p>
+            <h4>How It Works</h4>
+    <ul>
+        <li>
+            <strong>Autoregressive (AR):</strong> This part of the model captures the relationship between an observation and a specified number of lagged observations.
+        </li>
+        <li>
+            <strong>Integrated (I):</strong> This represents the differencing of raw observations to make the time series stationary, meaning the statistical properties of the series like mean and variance are constant over time.
+        </li>
+        <li>
+            <strong>Moving Average (MA):</strong> This aspect models the error of the model as a combination of past errors.
+        </li>
+    </ul>
+        <p>A crucial step in using ARIMA for time series forecasting is checking whether the data is stationary. Stationarity in time series data means that its statistical properties, like mean, variance, and autocorrelation, are constant over time. This is important because ARIMA, being a linear model, assumes that the time series it is modeling is stationary.</p>
+        <div>
+          <h4>Steps to Check or get Stationarity in ARIMA</h4>
+          <ol>
+              <li>
+                  <strong>Visual Inspection</strong>:
+                  <ul>
+                      <li>Plotting the Time Series: Visual inspection of the time series plot for trends, seasonal variations, or cyclic patterns.</li>
+                      <li>Rolling Statistics: Analyzing moving averages or moving variances over time to assess changes in statistical properties.</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Statistical Tests</strong>:
+                  <ul>
+                      <li>Augmented Dickey-Fuller (ADF) Test: A test to check stationarity where a low p-value indicates stationarity.</li>
+                      <li>KPSS Test (Kwiatkowski-Phillips-Schmidt-Shin): A test with the null hypothesis that the time series is stationary. A low p-value suggests non-stationarity.</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Transformations</strong>: If the time series is not stationary, transformations are needed. Common methods include:
+                  <ul>
+                      <li>Differencing: Subtracting the current value from the previous one to achieve stationarity.</li>
+                      <li>Log Transformation: Applying logarithmic transformation to stabilize variance.</li>
+                      <li>Decomposition: Separating the time series into trend, seasonality, and residuals.</li>
+                  </ul>
+              </li>
+              <li>
+                  <strong>Re-Testing</strong>: Re-testing the time series for stationarity after applying transformations.
+              </li>
+              <li>
+                  <strong>Modeling Implications</strong>: 
+                  <ul>
+                    <li>The order of differencing (d in ARIMA(p,d,q)) is determined based on how many times the series had to be differenced to attain stationarity.</li>
+                    <li>Over-differencing can lead to an overly complex model with unnecessary parameters, while under-differencing will leave non-stationarity in the model, potentially leading to poor forecasts.</li>
+                </ul>
+              </li>
+          </ol>
+      </div>
+      <div>
+        <h4>Determining ARIMA Parameters: p, d, q</h4>
+        <ol>
+          <li>
+              <strong>Parameter d - Differencing:</strong>:
+              <ul>
+                  <li>The d parameter represents the order of differencing required to make the time series stationary.</li>
+                  <li>As discussed earlier, stationarity can be checked using visual plots, statistical tests like the Augmented Dickey-Fuller test, and by looking at the autocorrelation function (ACF).</li>
+                  <li>In this project, first differencing (d=1) was sufficient to achieve stationarity in training set. At zero differencing (d=0) the p-value of the ADF Test was 0.39 (which is greater than 0.05 significance level). After differencing once (d=1),
+                    the p-value was 3.97e-11 (which is way less than 0.05 significance level).
+                  </li>
+              </ul>
+          </li>
+          <li>Parameter p - Autoregressive Term:
+            <ul>
+              <li>The p parameter denotes the number of lag observations included in the model, or the lag order.</li>
+              <li>To determine p, analysts often look at the Partial Autocorrelation Function (PACF) plot after the series has been made stationary.</li>
+              <li>The PACF plot shows the correlation of a lagged variable with the series, with the correlation of the intervening lags removed. The point where the PACF plot crosses the upper confidence interval for the first time indicates the optimal number of lags to be used as the p value.
+                In below PACF plot, it is evident that there are no significant lags, suggesting p = 0.
+              </li>
+              <span class="image main"
+                ><img src="images/pacf_plot.png" alt=""
+              /></span>
+            </ul>
+          </li>
+          <li>Parameter q - Moving Average Term:
+            <ul>
+              <li>The q parameter indicates the size of the moving average window, or the order of the moving average component.</li>
+              <li>The ACF plot is used to determine q after the series has been differenced.</li>
+              <li>In the ACF plot, the number of lags that cross the upper confidence interval for the first time suggests the value of q. This represents the point where the correlation between the series and its lagged version becomes insignificant.
+                In below ACF plot, it is evident that there are no signifianct lags, suggesting q = 0.
+              </li>
+              <span class="image main"
+                ><img src="images/acf_plot.png" alt=""
+              /></span>
+            </ul>
+          </li>
+          <li>Practical Considerations:</li>
+          <ul>
+            <li>The above ACF and PACF plots suggest an ARIMA (0, 1, 0) model for time series forecasting. However, this model is quite simple and has limited capability in capturing complex trends in a time series. This model is often referred to as a "random walk" model.
+            </li>
+            <li>
+              Sometimes, finding the right combination of p, d, and q involves trial and error, testing different combinations and comparing the model performance using metrics like AIC (Akaike Information Criterion) or BIC (Bayesian Information Criterion).
+            </li>
+            <li>Through trial and error, I found ARIMA (0, 2, 1) model performing much better with AIC value = 295.45 than ARIMA (0, 1, 0) with AIC value = 296.58. </li>
+          </ul>
+        </ol>
+      </div>
+      <div>
+        <h4>Model Performance Results</h4>
+        <p><b>Models Evaluated:</b> ARIMA(0, 1, 0) and ARIMA(0, 2, 1)<br>
+          <b>Evaluation Metric:</b> Root Mean Square Error (RMSE) on the test set</p>
+          <ol style="text-align: justify;">
+            <li>ARIMA(0, 1, 0) Results:
+            <ul>
+              <li><strong>Model Description</strong>: This model is a simple differencing model without any autoregressive or moving average components.</li>
+              <li><strong>Performance</strong>: The ARIMA(0, 1, 0) model achieved an RMSE of 50.53 on the test set.</li>
+              <li><strong>Interpretation</strong>: An RMSE of 50.53 suggests that, on average, the model’s predictions deviate from the actual values by approximately 50.53 units. Given the simplicity of this model, this level of error might be expected.</li>
+            </ul>
+          </li>
+            <li>ARIMA(0, 2, 1) Results:
+              <ul>
+                <li><strong>Model Description</strong>: This model includes a second-order differencing with a first-order moving average component.</li>
+                <li><strong>Performance</strong>: The ARIMA(0, 2, 1) model showed an improved RMSE of 37.07 on the test set.</li>
+                <li><strong>Interpretation</strong>: The lower RMSE of 37.07 indicates a better fit to the data compared to the ARIMA(0, 1, 0) model. The inclusion of the moving average component helps in capturing some of the temporal dynamics missed by the simpler model.</li>
+                
+              </ul>
+            </li>
+          </ol>
+          <p>Here is a visual representation of actual and predicted values by ARIMA (0, 2, 1) model on test set.</p>
+                <span class="image main"
+                ><img src="images/tesla_plot3_r.png" alt=""
+              /></span>
+          <p style="text-align: justify;"><br><strong>Conclusion</strong>: <br>
+            The comparison between the two models demonstrates the impact of model complexity on forecast accuracy. While the ARIMA(0, 1, 0) serves as a basic model, the ARIMA(0, 2, 1) model, with its additional moving average component, provides a more accurate fit for the Tesla stock price data. These results highlight the importance of experimenting with different model specifications to find a more optimal balance between model simplicity and predictive accuracy.
+          <br><br>
+          Next, we will delve into the analysis and results obtained from using the Prophet library. This will provide another perspective on forecasting the Tesla stock prices, leveraging Prophet's unique capabilities in handling time series data with trends and seasonality.
+        </p>
+        </div>
+      <div class="dots-divider"></div>
+      <div>
+        <h3>Prophet</h3>
+        <p>Developed by Facebook, Prophet is a forecasting tool tailored for time series data that displays patterns on different time scales such as yearly, weekly, and daily. It's known for handling missing data and outliers well. 
+          An important prerequisite for using Prophet is that the dataset must have the date column named as 'ds' and the target variable (the value to be predicted) column named as 'y'.
+          <a href="https://github.com/Amanespana/Leveragai/blob/main/TeslaStockPrediction/TeslaStockPrediction.ipynb">(Github Link)</a></p>
+        <h4>How It Works:</h4>
+        <ul>
+          <li>Prophet decomposes time series into three main components: trend, seasonality, and holidays. It works well with daily observations that have strong seasonal effects.</li>
+          <li>The model uses additive or multiplicative models to fit non-linear trends with yearly and weekly seasonality, plus holiday effects.</li>
+        </ul>
+        <h4> Implementing and Evaluating the Prophet Model:</h4>
+        <ol>
+          <li>Data Preparation:
+            <ul>
+              <li><b>Column renaming: </b>Before applying Prophet, the data needs to be formatted appropriately:
+                <ul>
+                  <li>The date/time column should be renamed to 'ds'.</li>
+                  <li>The column containing the values to be predicted (such as stock prices in this case) should be renamed to 'y'.</li>
+                </ul>
+              </li>
+              <li><b>Splitting Data: </b>The data is split into train and test sets as mentioned in the data splitting strategy above.</li>
+            </ul>
+          </li>
+          <li><b>Model Initialization: </b>
+          <ul>
+            <li>An instance of the Prophet model was initiated with <code>daily_seasonality=True</code> to capture daily patterns in the data.</li>
+          </ul></li>
+          <li><b>Model Training: </b>
+            <ul>
+              <li>The model was then fitted on the training set, which spans from October 1, 2022, to December 1, 2022. This fitting process involves the model learning the patterns and trends in the Tesla stock price during this period.</li>
+            </ul></li>
+            <li><b>Model Evaluation: </b>
+              <ul>
+                <li>Upon applying the trained Prophet model to the test set (December 2, 2022, to January 1, 2023), the Root Mean Square Error (RMSE) was calculated to evaluate its performance.
+                  The model achieved an RMSE of 20.88 on the test set.
+                </li>
+                <li> This RMSE of 20.88 is significantly lower than the RMSEs obtained from both the ARIMA(0, 1, 0) and ARIMA(0, 2, 1) models, indicating a substantial improvement in predictive accuracy.</li> 
+                  <li>Below is a visual representation of the actual and predicted values. The black dots are actual values and the blue line is the predicted values. 
+                  The shaded region is the confidence interval which serves as the predicted range in which the predicted value is expected to lie.
+                   It is evident that the prophet model predicts that the stock price will keep falling down.
+                </li>
+              </ul></li>
+            </ol>
+            <span class="image main"
+                ><img src="images/prophet_plot_r.png" alt=""
+              /></span>
+            <p style="text-align: justify;"><strong>Conclusion</strong>: <br>
+              The Prophet model's effectiveness in capturing complex patterns in Tesla's stock price data is evident, especially when compared to the ARIMA models. The inclusion of daily seasonality and its adeptness at handling different time scales and irregular trends contribute to this accuracy, showcasing Prophet's strengths in time series forecasting.<br> <br>
+              However, we are not done yet. Next, we will explore the potential of a cutting-edge deep learning model - <strong>N-Beats</strong>. This model, known for its versatility and power in handling time series data, represents a leap into the realm of advanced neural network architectures. By leveraging N-Beats, we aim to uncover deeper insights and achieve even more precise predictions for Tesla's stock price. </p>
+          
+      </div>
+      <div class="dots-divider"></div>
+      <div>
+        <h3>N-BEATS (Neural Basis Expansion Analysis for Time Series)</h3>
+        <p>N-BEATS is a deep learning model specifically designed for time series forecasting. It's a significant advancement in the field because of its architecture and approach, which differ markedly from traditional time series models.
+          <a href="https://github.com/Amanespana/Leveragai/blob/main/TeslaStockPrediction/I%2BG_Nbeats_Pytorch.ipynb">(Github Link)</a>
+          <br> <br>
+          One of the standout features of N-BEATS is its model architecture, which is purely based on neural networks. Unlike many other forecasting models, it doesn't rely on recurrent or convolutional layers. Instead, it uses a stack of fully connected layers (feedforward neural networks) with a novel backward and forward residual linkage system.
+        </p>
+        <h4>How It Works:</h4>
+        <ul>
+          <li><b>Basis Expansion: </b>N-BEATS works by producing a set of basis expansion coefficients which are used to construct the final forecast. This is akin to breaking down the time series into simpler, learnable patterns.</li>
+          <li><b>Forward and Backcast: </b>The model is unique in its use of both 'backcasting' and 'forecasting'. Backcasting is used to reconstruct the past data points (input), while forecasting is for predicting future data points (output).</li>
+          <li><b>Blocks and Stacks: </b>The architecture comprises multiple blocks and stacks. Each block makes its own prediction, which are then combined to form the final output.</li>
+          <li><b>Lookback Period: </b>The lookback period in N-BEATS refers to the amount of historical data that the model considers to make its predictions. It's the window of past observations that the model 'looks back' at when forecasting future values.
+            The length of the lookback period is a critical parameter. It influences how much of the historical context the model has access to. A longer lookback period may provide more context, but it can also introduce more complexity and computational load.</li>
+            <li><b>Forecast Period: </b>The forecast period is the length of time into the future for which the model makes predictions. It is the horizon over which the model ‘forecasts’.
+              A longer forecast period can provide more forward-looking insights but may come with reduced accuracy.</li>
+        </ul>
+        <figure class="image main"
+            ><img src="images/nbeats_architecture_r.png" alt=""
+            /><figcaption style="text-align: center;">N-BEATS Architecture (Source: https://arxiv.org/pdf/1905.10437.pdf)</figcaption></figure>
+          <br><br>
+          <h4>N-BEATS: Generic vs. Interpretable Architectures</h4>
+          <p><b>Generic Architecture (N-BEATS-G)</b></p>
+          <ul>
+            <li><b>Overview: </b>The Generic architecture of N-BEATS is designed to be a flexible and general-purpose model for time series forecasting. It doesn't impose any specific assumptions about the underlying patterns in the time series data.
+            </li>
+            <li><b>Structure: </b>This architecture is built using stacks of fully connected layers. Each stack learns a different type of representation of the data, and their outputs are combined to make the final prediction.</li>
+            <li><b>Basis Expansion: </b>In the Generic model, the basis expansion is learned entirely from the data. This means the model automatically learns how to best represent and predict the time series based on the input data alone.</li>
+          </ul>
+          <p><b>Interpretable Architecture (N-BEATS-I)</b></p>
+          <ul>
+            <li><b>Overview: </b>The Interpretable architecture, as the name suggests, is designed to provide more interpretable results. It makes assumptions about the time series components and structures the model to learn these specific components.</li>
+            <li><b>Component-Based: </b>This model is designed to explicitly learn and forecast components such as trend and seasonality. Each stack in the architecture is dedicated to a specific aspect of the time series, like capturing long-term trends or seasonal patterns.</li>
+            <li><b>Basis Functions: </b>Unlike the Generic model, the Interpretable model uses predefined basis functions to model different components of the time series. This means the model is guided to learn representations that align with these predefined patterns.</li>
+          </ul>
+            <h4>Implementing N-Beats for Tesla Stock Price Forecasting</h4>
+            <p>The implementation of the N-Beats model is carried out using the N-BEATS module from PyTorch Forecasting library, a specialized tool for time series forecasting with PyTorch. Moreover, I used Google's free T4 GPU in Googel Colab to train the model on train set. </p>
+            <ol>
+              <li><b>Data Preparation: </b> Data Preparation includes complex preprocessing steps as outlined below:
+                <ul>
+                  <li><b>Creating Required Columns: </b> The N-Beats module from PyTorch Forecasting requires transforming <code>Date</code> column to  <code>Time_idx</code> column ( for a numerical representation of time, essential for the model's understanding of temporal dynamics)
+                     and a <code>Group</code> column (For distinguishing multiple time series within the dataset. Although, we only have one time series dataset we still need to create this column).</li>
+
+                     <li><b>Splitting the Data: </b>Divided the dataset into training and testing sets for model training and subsequent evaluation based on the data splitting startegy mentioned at the start of this project</li>
+                     <li><b>Parameter Definition:  </b>Defined the parameters <code>max_encoder_length</code> and <code>max_prediction_length</code>for the TimeSeriesDataset, which are the lookback period and forecast period as 7 and 1 respectively. Meaning, to lookback seven days to predict the next eighth day.</li>
+                     <li><b>Time Series Dataset Preparation: </b>Converted the training and testing DataFrames into TimeSeriesDataset type using <code>TimeSeriesDataset()</code> module from PyTorch Forecasting, compatible with N-Beats.</li>
+                     <li><b>DataLoader Creation: </b>Created DataLoaders for both datasets to supply batches of data to the model during training with <code>batch_size=1024</code> using <code>to_dataloader()</code> class from PyTorch Forecasting.</li>
+                </ul>
+              </li>
+              <li><b>Model Definition: </b>
+              <ul>
+                <li><b>Generic Model: </b>Defined the N-BEATS Generic model, with parameters based on the specifications from the N-BEATS research paper. <a href="https://arxiv.org/pdf/1905.10437.pdf">(link)</a></li>
+                <li><b>Interpretable Model: </b>Similarly, defined the N-BEATS Interpretable model, adhering to the guidelines provided in the N-BEATS paper. This model variant offers insights into the components of the time series like trend and seasonality.</li>
+              </ul></li>
+              <li><b>Model Training and Optimization: </b>
+              <ul>
+                <li>Created a trainer instance for both the generic model and interpretable model, which handles the training process. Then, passing the training data to the trainers.
+                </li>
+                <li> Identified and loaded the best performing generic model and interpretable model from the checkpoint file.</li>
+              </ul></li>
+              <li><b>Forecasting and Results: </b> 
+                <ul>
+                  <li>Generated forecasts using the trained N-BEATS-G (Generic) model and N-BEATS-I (Interpretable) model and received RMSE scores of 7.346 and 7.502 respectively.</li>
+                  <li>The RMSE score pf 7.346 suggests that, on average, the generic model’s predictions deviate from the actual values by approximately 7.346 units. Given the complexity of stock price prediction, this indicates a strong performance, showcasing the model's capability in accurately capturing and forecasting the stock price movements.</li>
+                  <li>The slightly higher RMSE of Interpretable model, compared to the Generic model, reflects the model's focus on interpretability. While it provides valuable insights into the time series components, it does so with a marginal trade-off in raw predictive accuracy.</li>
+                </ul>
+                </li>
+            </ol>
+            <p> Below is the visual representation of the actual and predicted values from both models</p>
+            <span class="image main"
+                ><img src="images/nbeats_i_g_r.png" alt=""
+              /></span>
+              <br><br>
+              <div class="dots-divider"></div>
+              <h3>Results and Performance Evaluation of Time Series Forecasting Models</h3>
+              <p>We evaluated the performance of the N-BEATS Generic and Interpretable models against the ARIMA(0, 2, 1) and Prophet models, using the Root Mean Square Error (RMSE) metric (lower the better).</p>
+              <h4>RMSE Results Comparison</h4>
+    <ul>
+        <li><strong>ARIMA(0, 2, 1) Model</strong>:
+            <p>RMSE Score: 37.28. This higher RMSE indicates a relatively lower prediction accuracy for the ARIMA model in this context.</p>
+        </li>
+        <li><strong>Prophet Model</strong>:
+            <p>RMSE Score: 20.88. The Prophet model shows better performance compared to ARIMA, yet with a higher RMSE than the N-BEATS models.</p>
+        </li>
+        <li><strong>N-BEATS Generic Model (N-BEATS-G)</strong>:
+            <p>RMSE Score: 7.346. The Generic model demonstrates superior performance with the lowest RMSE, indicating high predictive accuracy.</p>
+        </li>
+        <li><strong>N-BEATS Interpretable Model (N-BEATS-I)</strong>:
+            <p>RMSE Score: 7.502. Slightly higher than the Generic model, this score balances interpretability with a very competitive level of accuracy.</p>
+        </li>
+    </ul>
+    <h4>Overall Analysis</h4>
+    <p>The N-BEATS models, both Generic and Interpretable, outperform the ARIMA and Prophet models in terms of RMSE, indicating more accurate predictions for Tesla's stock prices. The choice between N-BEATS Generic and Interpretable models depends on the specific requirement for accuracy versus interpretability in the forecasting task. The lower RMSE scores for the N-BEATS models suggest their higher suitability for complex, non-linear patterns typically observed in stock price data. Check the github <a href="https://github.com/Amanespana/Leveragai/tree/main/TeslaStockPrediction">(link)</a> for more details and code/</p>
+
+    <h4>Conclusion</h4>
+    <p>This comprehensive evaluation highlights the effectiveness of advanced neural network-based models like N-BEATS in time series forecasting. Their superior performance in this case study suggests their potential applicability in various complex forecasting scenarios. The results also demonstrate the importance of model selection based on the specific characteristics of the data and the forecasting goals, balancing the need for accuracy and interpretability.</p>
+
+      </div>
+
+    </section>
+    </div>
+  </body>
+</html>
+
+<!-- Main -->
+<div id="main">
+  <!-- Two -->
+  <section id="two"></section>
+
+  <!-- Three -->
+
+
+<!-- Footer -->
+<!-- <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/amandeep-s"
+            class="icon brands fa-linkedin-in"
+            ><span class="label">LinkedIn</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Amanespana/Leveragai/tree/main/TeslaStockPrediction"
+            class="icon brands fa-github"
+            ><span class="label">Github</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="mailto:amandeep1552@gmail.com"
+            class="icon solid fa-envelope"
+            ><span class="label">Email</span></a
+          >
+        </li>
+      </ul>
+      <ul class="copyright">
+        <li>&copy; Amandeep Singh</li>
+        <li>Design by: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer> -->
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/left_section.js"></script>
+</body>
+</html>
